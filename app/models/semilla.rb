@@ -1,0 +1,2 @@
+class Semilla < ApplicationRecord
+end
