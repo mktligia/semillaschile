@@ -14,7 +14,7 @@ user = User.create([
 
 
 semilla = Product.create([
-{ name: "Poroto", content:"Phaseolus vulgaris",  address: "merida", country: "Venezuela", price_cents: 2000}, 
+{ name: "Arreglo Floral", content:"Florero Rosas Maules y Liliums",  address: "merida", country: "Venezuela", price_cents: 2000}, 
 { name: "Garbanzos", content:"Garbanzus peligrations",  address: "Chillen", country: "Chile", price_cents: 2500},
 { name: "Tomate", content:"Tomates green",  address: "Angol", country: "Chile", price_cents: 1000},
 { name: "Rosa", content:"Rosa puntiaguda",  address: "Cartagena", country: "Colombia", price_cents: 1500}
