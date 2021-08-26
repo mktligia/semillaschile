@@ -1,4 +1,8 @@
-<h1>Informacion del Producto</h1>
-<h2><%=@product.name%></h2>
-<h2><%=@product.content%></h2>
 <%= link_to 'Back', products_path %>
+<div class="card-product-detalle ml-3">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-detalle-infos">
+    <h2><%=@product.name%></h2>
+    <p><%=@product.content%></p>
+  </div>
+</div>
