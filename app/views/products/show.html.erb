@@ -1,8 +1,11 @@
-<%= link_to 'Back', products_path %>
-<div class="card-product-detalle ml-3">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-detalle-infos">
-    <h2><%=@product.name%></h2>
-    <p><%=@product.content%></p>
+<div class="container">
+  <div class="card-product-detalle ml-3">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-product-detalle-infos">
+      <h2><%=@product.name%></h2>
+      <p><%=@product.content%></p>
+      <button type="button" class="btn btn-primary">Comprar</button>
+    </div>
   </div>
 </div>
+<%= link_to 'Back', products_path %>
