@@ -40,7 +40,7 @@ a {
 }
 
 .imagen-header{
-background-image: url(semillas.jpg);
+background-image: url(Portada.jpg);
 background-repeat: no-repeat;
 background-position: center;
 width: 100%;
@@ -66,18 +66,16 @@ background-size:cover;
 }
 
 .header .title h1{
-	font-family: 'poppins', sans-serif;
+	font-family:"Roboto";
 	font-size: 64px;
-	color: aliceblue;
+	color:rgba(218, 218, 218, 0.774);
 	font-weight: 900;
-	text-shadow: -4px 3px 0 #1a1a1a
 }
 
 .header h3{
-	font-family: 'poppins', sans-serif;
+	font-family: "Roboto";
 	font-size: 24px;
-	color: rgb(248, 248, 248) !important;
-	text-shadow: -4px 3px 0 #1a1a1a
+	color: rgba(255, 255, 255, 0.966) !important;
 }
 
 
@@ -89,7 +87,7 @@ background-size:cover;
   
   body {
 	font-family: 'Nunito', sans-serif;
-	color: #384047;
+	color: #ffffffb0;
   }
   
   form {
