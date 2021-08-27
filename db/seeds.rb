@@ -5,18 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+User.destroy_all
+Product.destroy_all
+#los usuarios no se registran al realizar el rails db:seed
+#Se pueden crear por la pagina con Login
 user = User.create([
-{ first_name: "Ligia", last_name:"Peña",  email: "mktligia@gmail.com", password: "1234", username: "mktligia"}, { first_name: "Bruno", last_name:"Perez",  email: "bperez@gmail.com", password: "3321", username: "bruno"}, 
+{ first_name: "Ligia", last_name:"Peña",  email: "mktligia@gmail.com", password: "1234", username: "mktligia"}, 
+{ first_name: "Bruno", last_name:"Perez",  email: "bperez@gmail.com", password: "3321", username: "bruno"}, 
 { first_name: "Diego", last_name:"Obando",  email: "dobando@gmail.com", password: "5678", username: "diego"}, 
 { first_name: "Jhonatan", last_name:"Mejias",  email: "jmejias@gmail.com", password: "5689", username: "Jhonatan"}
 ])
 
 
 semilla = Product.create([
-{ name: "Arreglo Floral", content:"Florero Rosas Maules y Liliums",  address: "merida", country: "Venezuela", price_cents: 2000}, 
-{ name: "Garbanzos", content:"Garbanzus peligrations",  address: "Chillen", country: "Chile", price_cents: 2500},
-{ name: "Tomate", content:"Tomates green",  address: "Angol", country: "Chile", price_cents: 1000},
-{ name: "Rosa", content:"Rosa puntiaguda",  address: "Cartagena", country: "Colombia", price_cents: 1500}
+{ name: "Flores", content:"Ramos de Rosas, Liliums, Tulipanes y otros",  address: "merida", country: "Venezuela", price_cents: 2000}, 
+{ name: "Canastas y Arreglos Florales", content:"Diseños especiales",  address: "Chillen", country: "Chile", price_cents: 2500},
+{ name: "Regalos", content:"Sorprende a los que amas",  address: "Angol", country: "Chile", price_cents: 1000},
+{ name: "Saludos con Intencion", content:"Dia de la Madre, Cumpleaños, Aniversario, Agradecimientos, Felicitaciones",  address: "Cartagena", country: "Colombia", price_cents: 1500},
+{ name: "Condolencias", content:"Para que estes presente",  address: "Cartagena", country: "Colombia", price_cents: 1500}
 ])
 puts "Semillas insertadas"
