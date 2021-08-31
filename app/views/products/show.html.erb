@@ -10,12 +10,13 @@
           <p><%=@product.content%></p>
         </div>
         <div class="extra-margin">
-          <h6>Precio $ <%=@product.price%></h6>
+          <h6>Precio $ <%=@product.price_cents%></h6>
         </div>
         <div class="d-flex justify-content-between extra-margin mb-5">
           <button type="button" class="btn btn-primary m-1" style="background-color:green;">Comprar</button>
           <!--<button type="button" class="btn btn-primary m-1"></button>-->
           <%= link_to'Volver', products_path, class:"btn btn-primary m-1"%>
+          <%= link_to'Comprar', orders_path(@product.id), class:"btn btn-primary m-1"%>
         </div>
      </div>
   </div>
