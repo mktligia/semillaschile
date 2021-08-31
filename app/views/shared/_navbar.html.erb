@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
    <div class="item-logo">
-        <%= image_tag("Logo 1.png", :alt => "rss feed") %>
+        <%= image_tag("logotipo.png", :alt => "rss feed") %>
     </div>
 
     <% end %>
@@ -18,7 +18,7 @@
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Semillas", "#", class: "nav-link" %>
+          <%= link_to "Productos", products_path(), class: "nav-link" %>
         </li>
          <li class="nav-item">
           <%= link_to "Accesorios", "#", class: "nav-link" %>
