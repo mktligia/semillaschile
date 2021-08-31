@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2021_08_30_054341) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price_cents", default: 0, null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
