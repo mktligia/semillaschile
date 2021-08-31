@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Product.destroy_all
+
+require "open-uri"
+
 #los usuarios no se registran al realizar el rails db:seed
 #Se pueden crear por la pagina con Login
 user = User.create([
@@ -24,4 +27,12 @@ semilla = Product.create([
 { name: "Saludos con Intencion", content:"Dia de la Madre, Cumpleaños, Aniversario, Agradecimientos, Felicitaciones",  address: "Cartagena", country: "Colombia", price_cents: 1500},
 { name: "Condolencias", content:"Para que estes presente",  address: "Cartagena", country: "Colombia", price_cents: 1500}
 ])
+
+
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+product = Product.new(name: "Flores", content:"Ramos de Rosas, Liliums, Tulipanes y otros",  address: "merida", country: "Venezuela", price_cents: 2000)
+product.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+
 puts "Semillas insertadas"
