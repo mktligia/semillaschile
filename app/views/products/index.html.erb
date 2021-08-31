@@ -3,7 +3,7 @@
   <div class="d-flex justify-content-center aling-item-center">
     <% @products.each do |item| %>
       <div class="card-product ml-3">
-            <%= image_tag item.image %>
+           <%= cl_image_tag item.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
               <h2><%=item.name%></h2>
               <p><%=item.content%></p>
