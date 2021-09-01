@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Product.destroy_all
+
+require "open-uri"
+
 #los usuarios no se registran al realizar el rails db:seed
 #Se pueden crear por la pagina con Login
 user = User.create([
@@ -18,10 +21,18 @@ user = User.create([
 
 
 semilla = Product.create([
-{ name: "Flores", content:"Ramos de Rosas, Liliums, Tulipanes y otros",  address: "merida", country: "Venezuela", price_cents: 2000}, 
-{ name: "Canastas y Arreglos Florales", content:"Diseños especiales",  address: "Chillen", country: "Chile", price_cents: 2500},
-{ name: "Regalos", content:"Sorprende a los que amas",  address: "Angol", country: "Chile", price_cents: 1000},
-{ name: "Saludos con Intencion", content:"Dia de la Madre, Cumpleaños, Aniversario, Agradecimientos, Felicitaciones",  address: "Cartagena", country: "Colombia", price_cents: 1500},
-{ name: "Condolencias", content:"Para que estes presente",  address: "Cartagena", country: "Colombia", price_cents: 1500}
+{ name: "Ramos de flores", content:"Hermosas flores con Avellano",  address: "merida", country: "Venezuela", price_cents: 3000, image:"ramos.jpg"}, 
+{ name: "Arreglos florales", content:"Arreglos para toda ocación",  address: "Chillen", country: "Chile", price_cents: 10000, image:"condolencias.png"},
+{ name: "Canastos, centros y cubreurnas", content:"Ofrendas de todo tipo",  address: "Angol", country: "Chile", price_cents: 10000, image:"canasto.png"},
+{ name: "Coronas", content:"Cojines y coronas florales personalizadas",  address: "Cartagena", country: "Colombia", price_cents: 60000, image:"corona.png"},
+{ name: "Dias especiales", content:"Feliz día , Cumpleaños y San valentin",  address: "Cartagena", price_cents: 10000, image:"regalo.png"}
 ])
+
+
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+product = Product.new(name: "Flores", content:"Ramos de Rosas, Liliums, Tulipanes y otros",  address: "merida", country: "Venezuela", price_cents: 2000)
+product.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+
 puts "Semillas insertadas"
