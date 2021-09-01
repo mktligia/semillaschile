@@ -1,22 +1,31 @@
 <div class="container">
   <div class="div">
     <p id="Isotipo">Petalos Chile.cl</p>
-    <h2>1. Añadir al Carro</h2>
-    <h2>2. Pago</h2>
-    <h2>3. Confirmacion</h2>
+    <p>1. Añadir al Carro</p>
+    <p>2. Pago</p>
+    <p>3. Confirmacion</p>
   </div>
 
   <div class="d-flex">
     <div class="row"></div>
       <div class="detalle_orden col-6">
-      <p>Subtotal <%=@product.price_cents%></p>
-      <p>Costo de Envìo</p>
-      <p>Total Compra <%=@product.price_cents+@product.price_cents%></p>
+      <h2>Detalle de Orden</h2>
+      <h4>Subtotal</h4>
+      <h4>Costo de Envio</h4>
+      <h4>Total Compra</h4>
       </div>
     </div>
     <div class="row">
       <div class="direccion_envio col-6">
-      <%= simple_form_for variable do |f| %>
+      <h2>Direccion de Envio</h2>
+      <%= simple_form_for([@product, @order]) do |f| %>
+      <%= f.input :Nombre, label: "Nombre Completo" %>
+      <%= f.input :id, label: "Correo Email" %>
+      <%= f.input :id, label: "Telefono de Contacto" %>
+      <%= f.input :id, label: "Direccion de Envio" %>
+      <%= f.input :id, label: "Ciudad" %>
+      <%= f.input :id, label: "Codigo Postal" %>
+      <%= f.submit %>
       <% end %>
       </div>
     </div>
