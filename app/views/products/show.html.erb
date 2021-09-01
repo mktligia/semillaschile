@@ -16,7 +16,7 @@
           <button type="button" class="btn btn-primary m-1" style="background-color:green;">Comprar</button>
           <!--<button type="button" class="btn btn-primary m-1"></button>-->
           <%= link_to'Volver', products_path, class:"btn btn-primary m-1"%>
-          <%= link_to'Comprar', orders_path(@product.id), class:"btn btn-primary m-1"%>
+          <%= link_to'Comprar', new_product_order_path(@product), class:"btn btn-primary m-1"%>
         </div>
      </div>
   </div>
