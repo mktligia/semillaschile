@@ -5,6 +5,9 @@ class OrdersController < ApplicationController
     @product = Product.find(params[:product_id])
     @cantidad = params[:cantidad]
     @order = current_user.orders.new
+    @order.line_items.build
+
+    @subtotal = @cantidad.to_i * @product.price_cents
   end
 
   def create
@@ -32,8 +35,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:status, :user_id, :user, :total_price_cents, 
-                                    line_items: [:order_id, :cantidad, :product_id, :unit_price, :total_price_cents])
+    params.require(:order).permit(:status, :user_id, :user, :total_price_cents, :destinatario, :telefono, :email_d, :direccion_de_envio, :comuna, :ciudad, :codigo_postal, line_items_attributes: [:order_id, :product_id,:total_price_cents,:cantidad, :unit_price_cents])
   end
 
   def set_order

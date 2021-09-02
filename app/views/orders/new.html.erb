@@ -10,21 +10,27 @@
     <div class="row"></div>
       <div class="detalle_orden col-6">
       <h2>Detalle de Orden</h2>
-      <h4>Subtotal</h4>
+      <h4>Subtotal <%= @subtotal %></h4>
       <h4>Costo de Envio</h4>
       <h4>Total Compra</h4>
       </div>
     </div>
     <div class="row">
       <div class="direccion_envio col-6">
-      <h2>Direccion de Envio</h2>
-      <%= simple_form_for(@order) do |f| %>
+        <h2>Direccion de Envio</h2>
+        <%= simple_form_for(@order) do |f| %>
+        <%= f.input :destinatario, label: "Destinatario" %>
+        <%= f.input :telefono, label: "Telefono" %>
+        <%= f.input :email_d, label: "Email_destinatario" %>
+        <%= f.input :direccion_de_envio, label: "Direccion_de_envio" %>
+        <%= f.input :comuna, label: "Comuna" %>
+        <%= f.input :ciudad, label: "Ciudad" %>
+        <%= f.input :codigo_postal, label: "Codigo_postal" %>
         <%= f.simple_fields_for :line_items do |item| %>
-          <%= item.input :product_id, value: @product.id %>
-          <%= item.input :unit_price, value: @product.price_cents %>
-          <%= item.input :cantidad, value: @cantidad %>
+          <%= item.input :product_id, as: :hidden, input_html: { value: @product.id} %>
+          <%= item.input :unit_price_cents, as: :hidden, input_html: { value: @product.price_cents.to_i } %>
+          <%= item.input :cantidad, input_html: { value: @cantidad } %>
         <% end %>
-
         <%= f.submit "Guardar datos de orden" %>
       <% end %>
       </div>

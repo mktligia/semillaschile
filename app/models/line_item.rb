@@ -2,7 +2,7 @@ class LineItem < ApplicationRecord
   belongs_to :order
   belongs_to :product
 
-  monetize :unit_price
+  monetize :unit_price_cents
   monetize :total_price_cents
 
   after_create_commit :update_total_price

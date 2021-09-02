@@ -6,6 +6,7 @@ class Order < ApplicationRecord
 
   after_create_commit :update_total_price
   after_update_commit :update_total_price
+  accepts_nested_attributes_for :line_items
 
   private
 
