@@ -21,8 +21,8 @@
       <%= simple_form_for(@order) do |f| %>
         <%= f.simple_fields_for :line_items do |item| %>
           <%= item.input :product_id, value: @product.id %>
-          <%= item.input :total_price_cents, value: @product.total_price_cents %>
-          <%= item.input :product_id, value: @product.id %>
+          <%= item.input :unit_price, value: @product.price_cents %>
+          <%= item.input :cantidad, value: @cantidad %>
         <% end %>
         <%= f.submit %>
       <% end %>
