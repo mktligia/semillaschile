@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show, :new, :create]
   
-  resources :orders
+  resources :orders, except: :index
 
 end

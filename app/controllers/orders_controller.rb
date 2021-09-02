@@ -1,21 +1,25 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
+
   def new
     @product = Product.find(params[:product_id])
-    @order = Order.new
+    @order = current_user.orders.new
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = current_user.orders.new(order_params)
     @product = Product.find(params[:product_id])
-    @order.product = @product
-    @order.user = current_user
     @order.status = "En Proceso"
-    @order.save
-    redirect_to order_path(@order)
+    @order.line_items.build(order_params[:line_items])
+    if @order.save
+      redirect_to order_path(@order)
+    else
+      render :new
+    end
   end
 
   def show
-    @order = Order.find(params[:id])
+    
   end
 
   def edit
@@ -28,6 +32,11 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:content)
+    params.require(:order).permit(:status, :user_id, :user, :total_price_cents, 
+                                    line_items: [:order_id, :amount, :product_id, :total_price_cents])
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
   end
 end

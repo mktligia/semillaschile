@@ -18,13 +18,13 @@
     <div class="row">
       <div class="direccion_envio col-6">
       <h2>Direccion de Envio</h2>
-      <%= simple_form_for([@product, @order]) do |f| %>
-      <%= f.input :id, label: "Correo Email" %>
-      <%= f.input :id, label: "Telefono de Contacto" %>
-      <%= f.input :id, label: "Direccion de Envio" %>
-      <%= f.input :id, label: "Ciudad" %>
-      <%= f.input :id, label: "Codigo Postal" %>
-      <%= f.submit %>
+      <%= simple_form_for(@order) do |f| %>
+        <%= f.simple_fields_for :line_items do |item| %>
+          <%= item.input :product_id, value: @product.id %>
+          <%= item.input :total_price_cents, value: @product.total_price_cents %>
+          <%= item.input :product_id, value: @product.id %>
+        <% end %>
+        <%= f.submit %>
       <% end %>
       </div>
     </div>
