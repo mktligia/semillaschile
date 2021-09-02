@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   # Ruta estática
   root to: 'pages#home'
 
-  resources :products, only: [:index, :show] do
-    resources :orders, only: [:new, :create]
-  end
+  resources :products, only: [:index, :show, :new, :create]
   
-  resources :orders, only: [:edit, :update, :show]
+  resources :orders
 
 end
