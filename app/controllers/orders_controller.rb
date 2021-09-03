@@ -1,21 +1,28 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
+
   def new
     @product = Product.find(params[:product_id])
-    @order = Order.new
+    @cantidad = params[:cantidad]
+    @order = current_user.orders.new
+    @order.line_items.build
+
+    @subtotal = @cantidad.to_i * @product.price_cents
   end
 
   def create
-    @order = Order.new(order_params)
-    @product = Product.find(params[:product_id])
-    @order.product = @product
-    @order.user = current_user
+    @order = current_user.orders.new(order_params)
     @order.status = "En Proceso"
-    @order.save
-    redirect_to order_path(@order)
+    @order.line_items.build(order_params[:line_items])
+    if @order.save
+      redirect_to order_path(@order)
+    else
+      render :new
+    end
   end
 
   def show
-    @order = Order.find(params[:id])
+    
   end
 
   def edit
@@ -28,6 +35,10 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:content)
+    params.require(:order).permit(:status, :user_id, :user, :total_price_cents, :destinatario, :telefono, :email_d, :direccion_de_envio, :comuna, :ciudad, :codigo_postal, line_items_attributes: [:order_id, :product_id,:total_price_cents,:cantidad, :unit_price_cents])
+  end
+
+  def set_order
+    @order = Order.find(params[:id])
   end
 end
