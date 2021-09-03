@@ -1,8 +1,16 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
+  
+ 
    <div class="item-logo">
         <%= image_tag("logotipo.png", :alt => "rss feed") %>
+
+      <%if user_signed_in? %>
+      <p>  <%= current_user.email %></p>
+      <% end %>
     </div>
+
+  
 
     <% end %>
 

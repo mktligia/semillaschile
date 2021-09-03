@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    authorize @product
   end
 
   def create
@@ -28,7 +29,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to product_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to product_url, notice: "Producto was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -36,6 +37,7 @@ class ProductsController < ApplicationController
   private
   def set_user
     @product = Product.find(params[:id])
+    authorize @restaurant
   end
 
   def product_params
