@@ -13,4 +13,10 @@
           </div>
       <%end%>
     </div>
+
+<% if policy(Product).new? %>
+  <%= link_to ' Crear Nuevo Producto', new_product_path  %>
+<% end %>
+
+
 </div>
