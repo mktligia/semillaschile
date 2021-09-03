@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products= policy_scope(Product).order(created_at: :desc)
+  
   end
 
   def show
     @product = Product.find(params[:id])
+    authorize @product
   end
 
   def new
@@ -14,9 +16,11 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    authorize @product
+
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: "User was successfully created." }
+        format.html { redirect_to @product, notice: "Producto was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }

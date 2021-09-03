@@ -6,14 +6,15 @@ class OrdersController < ApplicationController
     @cantidad = params[:cantidad]
     @order = current_user.orders.new
     @order.line_items.build
-
     @subtotal = @cantidad.to_i * @product.price_cents
+    authorize @order
   end
 
   def create
     @order = current_user.orders.new(order_params)
     @order.status = "En Proceso"
     @order.line_items.build(order_params[:line_items])
+    authorize @order
     if @order.save
       redirect_to order_path(@order)
     else
@@ -22,13 +23,15 @@ class OrdersController < ApplicationController
   end
 
   def show
-    
+    authorize @order
   end
 
   def edit
+    authorize @order
   end
 
   def update
+    authorize @order
   end
 
 
@@ -40,5 +43,6 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
+    authorize @order
   end
 end

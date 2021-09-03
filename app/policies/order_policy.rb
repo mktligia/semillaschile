@@ -1,4 +1,4 @@
-class ProductPolicy < ApplicationPolicy
+class OrderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
@@ -10,7 +10,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    true #user.admin 
+    true
   end
 
   def new?
@@ -22,11 +22,10 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin
+    true
   end
 
   def destroy?
     user.admin
   end
-
 end
