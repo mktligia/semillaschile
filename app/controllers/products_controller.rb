@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: "Producto was successfully created." }
+        format.html { redirect_to @product, notice: "Producto creado." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to product_url, notice: "Producto was successfully destroyed." }
+      format.html { redirect_to product_url, notice: "Producto eliminado." }
       format.json { head :no_content }
     end
   end

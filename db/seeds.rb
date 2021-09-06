@@ -5,13 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-Product.destroy_all
+# User.destroy_all
+# Product.destroy_all
 
 # require "open-uri"
 
-# #los usuarios no se registran al realizar el rails db:seed
-# #Se pueden crear por la pagina con Login
+
+#los usuarios no se registran al realizar el rails db:seed
+#Se pueden crear por la pagina con Login
+
 # user = User.create([
 # { first_name: "Ligia", last_name:"Peña",  email: "mktligia@gmail.com", password: "1234", username: "mktligia"}, 
 # { first_name: "Bruno", last_name:"Perez",  email: "bperez@gmail.com", password: "3321", username: "bruno"}, 
@@ -29,10 +31,10 @@ Product.destroy_all
 # ])
 
 
+#file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+#product = Product.new(name: "Flores", content:"Ramos de Rosas, Liliums, Tulipanes y otros",  address: "merida", country: "Venezuela", price_cents: 2000)
+#product.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-# file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-# product = Product.new(name: "Flores", content:"Ramos de Rosas, Liliums, Tulipanes y otros",  address: "merida", country: "Venezuela", price_cents: 2000)
-# product.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
 
-puts "Semillas insertadas"
+# puts "Semillas insertadas"
