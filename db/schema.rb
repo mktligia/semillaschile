@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_08_31_144818) do
+=======
+ActiveRecord::Schema.define(version: 2021_09_03_041346) do
+>>>>>>> 0c6d134931c86eb93a7dfe05917e0af95dc06e55
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +50,11 @@ ActiveRecord::Schema.define(version: 2021_08_31_144818) do
   create_table "line_items", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "product_id", null: false
-    t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "total_price_cents", default: 0, null: false
+    t.integer "cantidad"
+    t.integer "unit_price_cents", default: 0, null: false
     t.index ["order_id"], name: "index_line_items_on_order_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
@@ -60,6 +65,13 @@ ActiveRecord::Schema.define(version: 2021_08_31_144818) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "total_price_cents", default: 0, null: false
+    t.string "destinatario"
+    t.string "telefono"
+    t.string "email_d"
+    t.string "direccion_de_envio"
+    t.string "comuna"
+    t.string "ciudad"
+    t.string "codigo_postal"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -87,6 +99,11 @@ ActiveRecord::Schema.define(version: 2021_08_31_144818) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "telefono"
+    t.string "ciudad"
+    t.string "codigo_postal"
+    t.string "comuna"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

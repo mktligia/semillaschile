@@ -7,10 +7,16 @@
             <div class="card-product-infos">
               <h2><%=item.name%></h2>
               <p><%=item.content%></p>
-              <h6>Precio: $ <%=item.price%></h6>
+              <h6>Precio: $ <%=item.price_cents%></h6>
               <%= link_to 'Ver mas', product_path(item.id)%>
             </div>
           </div>
       <%end%>
     </div>
+
+<% if policy(Product).new? %>
+  <%= link_to ' Crear Nuevo Producto', new_product_path  %>
+<% end %>
+
+
 </div>
