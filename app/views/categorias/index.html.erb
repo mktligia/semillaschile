@@ -1,4 +1,4 @@
-<h1>Arreglos de Flores y Regalos de Saludos</h1>
+<h1>Categorias</h1>
 <div class="container">
   <div class="d-flex justify-content-center aling-item-center">
     <% @products.each do |item| %>
@@ -7,16 +7,10 @@
             <div class="card-product-infos">
               <h2><%=item.name%></h2>
               <p><%=item.content%></p>
-              <h6>Precio: $ <%=item.price_cents%></h6>
+              <h1>Categorias: <%= @item.category %></h1>
               <%= link_to 'Ver mas', product_path(item.id)%>
             </div>
           </div>
       <%end%>
     </div>
-
-<% if policy(Product).new? %>
-  <%= link_to ' Crear Nuevo Producto', new_product_path  %>
-<% end %>
-
-
 </div>
