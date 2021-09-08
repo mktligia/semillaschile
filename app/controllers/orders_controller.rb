@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.new(order_params)
     @order.status = "En Proceso"
-    @order.line_items.build(order_params[:line_items])
     authorize @order
     if @order.save
       redirect_to order_path(@order)
