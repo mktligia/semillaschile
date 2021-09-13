@@ -1,8 +1,8 @@
-<h1>Arreglos de Flores y Regalos de Saludos</h1>
+<h1>¡Todo tipo de arreglos florales para cualquier ocasión!</h1>
 <div class="container">
-  <div class="d-flex justify-content-center aling-item-center">
+  <div class="d-flex justify-content-center aling-item-center flex-wrap">
     <% @products.each do |item| %>
-      <div class="card-product ml-3">
+      <div class="card-product m-2">
            <%= cl_image_tag item.photo.key, crop: :fill %>
             <div class="card-product-infos">
               <h2><%=item.name%></h2>
