@@ -10,8 +10,8 @@ class LineItem < ApplicationRecord
   private
 
   def update_total_price
-    q = self.quantity
-    unit_price = self.unit_price
+    q = self.cantidad
+    unit_price = self.unit_price_cents
     total_price = unit_price * q
 
     update(total_price_cents: total_price)

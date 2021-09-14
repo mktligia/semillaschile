@@ -1,0 +1,47 @@
+<div class="container">
+ <div class="d-flex justify-content-center">
+    <h1>Resumen de Compra</h1>
+ </div>
+ <div class="d-flex justify-content-between aling-item-center border-bottom">
+    <div class="text-center" >
+      <i class="fas fa-3x fa-cart-plus"></i>
+      <p>1. Añadir al Carro</p>
+    </div>
+    
+    <div class="text-center" id="active">
+      <i class="far fa-3x fa-money-bill-alt"></i>
+      <p>2. Pago</p>
+    </div>
+
+    <div class="text-center">
+      <i class="fas fa-3x fa-clipboard-check"></i>
+      <p>3. Confirmacion</p>
+    </div>
+  </div>
+    <div class="row aling-items-center">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>TOTAL : <%= @order.total_price_cents %> CLP</h5>
+            <h5 class="card-title">Destinatario : <%= @order.destinatario %></h5>
+            <h5 class="card-title">Telefono : <%= @order.telefono %></h5>
+            <h5 class="card-title">Email : <%= @order.email_d %></h5>
+            <h5 class="card-title">Direccion de Envio : <%= @order.direccion_de_envio %></h5>
+            <h5 class="card-title">Comuna : <%= @order.comuna %></h5>
+            <h5 class="card-title">Ciudad : <%= @order.ciudad %></h5>
+            <h5 class="card-title">Codigo Postal : <%= @order.codigo_postal %></h5>
+            <%= link_to'Pagar', products_path, class:"btn btn-primary m-1"%>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 text-center">
+        <div class="card">
+          <div class="card-body">
+          <%= image_tag("webpay-plus-integracion.png", width: 300, crop: :fill) %>
+          <p class="card-text">Por favor espere y siga su orden.</p>
+          <%= link_to'Pagar', "/orders/check", class:"btn btn-primary m-1"%>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
