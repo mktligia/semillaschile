@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   resources :orders, except: :index
 
+  get "/orders/check", to: redirect('orders/check.html')
+
+
 end

@@ -1,0 +1,39 @@
+<div class="container">
+ <div class="d-flex justify-content-center">
+    <h1>Resumen de Compra</h1>
+ </div>
+ <div class="d-flex justify-content-between aling-item-center border-bottom">
+    <div class="text-center" >
+      <i class="fas fa-3x fa-cart-plus"></i>
+      <p>1. Añadir al Carro</p>
+    </div>
+    
+    <div class="text-center" >
+      <i class="far fa-3x fa-money-bill-alt"></i>
+      <p>2. Pago</p>
+    </div>
+
+    <div class="text-center" id="active">
+      <i class="fas fa-3x fa-clipboard-check"></i>
+      <p>3. Confirmacion</p>
+    </div>
+  </div>
+    <div class="row aling-items-center">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 text-center">
+          <div class="card">
+            <div class="card-body">
+            <%= image_tag("webpay-plus-integracion.png", width: 300, crop: :fill) %>
+            <h3>Orden confirmada</h3>
+              <p class="card-text">Por favor espere y siga su orden.</p>
+              <a href="#" class="btn btn-primary">Estado del pedido</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

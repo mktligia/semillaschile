@@ -10,7 +10,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    true #user.admin 
+    user.admin 
   end
 
   def new?

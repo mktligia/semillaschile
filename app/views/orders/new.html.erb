@@ -1,31 +1,43 @@
 <div class="container">
-  <div class="div">
-    <p id="Isotipo">Petalos Chile.cl</p>
-    <p>1. Añadir al Carro</p>
-    <p>2. Pago</p>
-    <p>3. Confirmacion</p>
+
+  <div class="d-flex justify-content-between aling-item-center border-bottom">
+    <div class="text-center" id="active">
+      <i class="fas fa-3x fa-cart-plus"></i>
+      <p>1. Añadir al Carro</p>
+    </div>
+    
+    <div class="text-center">
+      <i class="far fa-3x fa-money-bill-alt"></i>
+      <p>2. Pago</p>
+    </div>
+
+    <div class="text-center">
+      <i class="fas fa-3x fa-clipboard-check"></i>
+      <p>3. Confirmacion</p>
+    </div>
   </div>
 
-  <div class="d-flex">
-    <div class="row"></div>
-      <div class="detalle_orden col-6">
-      <h2>Detalle de Orden</h2>
-      <h4>Subtotal <%= @subtotal %></h4>
-      <h4>Costo de Envio</h4>
-      <h4>Total Compra</h4>
-      </div>
-    </div>
+  <div class="container">
     <div class="row">
+      <div class="detalle_orden col-6">
+        <h2>Detalle de Orden</h2>
+        <h4>Subtotal <%= @subtotal %></h4>
+        <h4>Costo de Envio</h4>
+        <h4>Total Compra</h4>
+      </div>
+    
+    
       <div class="direccion_envio col-6">
         <h2>Direccion de Envio</h2>
-        <%= simple_form_for(@order) do |f| %>
-        <%= f.input :destinatario, label: "Destinatario" %>
+          <%= simple_form_for(@order) do |f| %>
+          <%= f.input :destinatario, label: "Destinatario" %>
         <%= f.input :telefono, label: "Telefono" %>
         <%= f.input :email_d, label: "Email_destinatario" %>
         <%= f.input :direccion_de_envio, label: "Direccion_de_envio" %>
         <%= f.input :comuna, label: "Comuna" %>
         <%= f.input :ciudad, label: "Ciudad" %>
         <%= f.input :codigo_postal, label: "Codigo_postal" %>
+        <%= f.input :total_price_cents, as: :hidden, input_html: { value: @subtotal }  %>
         <%= f.simple_fields_for :line_items do |item| %>
           <%= item.input :product_id, as: :hidden, input_html: { value: @product.id} %>
           <%= item.input :unit_price_cents, as: :hidden, input_html: { value: @product.price_cents.to_i } %>
