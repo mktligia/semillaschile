@@ -10,8 +10,11 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    view-homepage
-    user.admin
+    if user != nil
+      user.admin
+    else
+      true
+    end
   end
 
   def new?

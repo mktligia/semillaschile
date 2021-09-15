@@ -33,6 +33,11 @@ class OrdersController < ApplicationController
     authorize @order
   end
 
+  def check
+    @order = Order.find(params[:id])
+    authorize @order
+  end
+
 
   private
 

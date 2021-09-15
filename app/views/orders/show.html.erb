@@ -39,7 +39,7 @@
           <div class="card-body">
           <%= image_tag("webpay-plus-integracion.png", width: 300, crop: :fill) %>
           <p class="card-text">Por favor espere y siga su orden.</p>
-          <%= link_to'Pagar', "/orders/check", class:"btn btn-primary m-1"%>
+          <%= link_to'Pagar', check_order_path(@order), class:"btn btn-primary m-1"%>
           </div>
         </div>
       </div>
