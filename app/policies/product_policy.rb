@@ -10,7 +10,6 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    view-homepage
     user.admin
   end
 
