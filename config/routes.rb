@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index, :show, :new, :create]
 
-  resources :orders, except: :index
-
-  get "/orders/check", to: redirect('orders/check.html')
-
-
+  resources :orders, except: :index do
+    member do
+      get :check
+    end
+  end
 end

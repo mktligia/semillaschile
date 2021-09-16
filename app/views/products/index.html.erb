@@ -14,7 +14,7 @@
       <%end%>
     </div>
 
-<% if policy(Product).new? %>
+<% if user_signed_in? && current_user.admin %>
   <%= link_to ' Crear Nuevo Producto', new_product_path  %>
 <% end %>
 

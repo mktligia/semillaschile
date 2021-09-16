@@ -14,7 +14,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def new?
-    create?
+    true
   end
 
   def edit?
@@ -27,5 +27,9 @@ class OrderPolicy < ApplicationPolicy
 
   def destroy?
     user.admin
+  end
+
+  def check?
+    true
   end
 end

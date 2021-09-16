@@ -10,8 +10,12 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin
-  end
+    if user != nil
+      user.admin
+    else
+      true
+   end
+
 
   def new?
     create?
