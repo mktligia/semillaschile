@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     
+  <!-- bootstrap css -->
+      <link rel="stylesheet" href="../assets/stylesheets/css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -20,9 +35,40 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/alerts' %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%# <p class="notice"><%= notice %>
+    <%# <p class="alert"><%= alert %> 
 
     <%= yield %>
   </body>
+
+  <!-- Javascript files-->
+      <script src="../javascrpts/packs/jquery.min.js"></script>
+      <script src="../javascrpts/packs/popper.min.js"></script>
+      <script src="../javascrpts/packs/bootstrap.bundle.min.js"></script>
+      <script src="../javascrpts/packs/jquery-3.0.0.min.js"></script>
+      <script src="../javascrpts/packs/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="../javascrpts/packs/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="../javascrpts/packs/custom.js"></script>
+      <!-- javascript --> 
+      <script src="../javascrpts/packs/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+         
+         $(".zoom").hover(function(){
+         
+         $(this).addClass('transition');
+         }, function(){
+         
+         $(this).removeClass('transition');
+         });
+         });
+         
+      </script> 
+
 </html>

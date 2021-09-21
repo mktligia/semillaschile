@@ -14,8 +14,8 @@ class ProductPolicy < ApplicationPolicy
       user.admin
     else
       true
-   end
-
+    end
+  end 
 
   def new?
     create?
