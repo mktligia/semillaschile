@@ -1668,7 +1668,10 @@ input[type="radio"] .styled:checked+label::after {
      margin: 0px;
 }
 .plants .plants-box figure img {
+     height: 260px;
      width: 100%;
+     object-fit: cover;
+     
 }
 .plants .plants-box h3 {
      font-size: 30px;
