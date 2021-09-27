@@ -16,8 +16,9 @@
         </div>
         <%= f.number_field :cantidad, value: "1", min: 1 %>
         <div class="d-flex justify-content-between mb-4">
-          <%= f.submit "Comprar", class:"btn btn-success" %>
           <%= link_to'Volver', products_path, class:"btn btn-primary m-1"%>
+          <%= f.submit "Comprar", class:"btn btn-success  m-1" %>
+
         </div>
         <% end %>
      </div>

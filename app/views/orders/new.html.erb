@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-5">
 
-  <div class="d-flex justify-content-between aling-item-center border-bottom">
+  <div class="d-flex justify-content-between aling-item-center border-bottom mt-5">
     <div class="text-center" id="active">
       <i class="fas fa-3x fa-cart-plus"></i>
       <p>1. Añadir al Carro</p>
@@ -18,34 +18,53 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="detalle_orden col-6">
-        <h2>Detalle de Orden</h2>
-        <h4>Subtotal <%= @subtotal %></h4>
-        <h4>Costo de Envio</h4>
-        <h4>Total Compra</h4>
-      </div>
+    <div class="row mt-5">
+    
     
     
       <div class="direccion_envio col-6">
-        <h2>Direccion de Envio</h2>
+        <h1>Direccion de Envio</h1>
           <%= simple_form_for(@order) do |f| %>
           <%= f.input :destinatario, label: "Destinatario" %>
         <%= f.input :telefono, label: "Telefono" %>
-        <%= f.input :email_d, label: "Email_destinatario" %>
-        <%= f.input :direccion_de_envio, label: "Direccion_de_envio" %>
+        <%= f.input :email_d, label: "Email Destinatario" %>
+        <%= f.input :direccion_de_envio, label: "Direccion de envio" %>
         <%= f.input :comuna, label: "Comuna" %>
         <%= f.input :ciudad, label: "Ciudad" %>
-        <%= f.input :codigo_postal, label: "Codigo_postal" %>
+        <%= f.input :codigo_postal, label: "Codigo Postal" %>
         <%= f.input :total_price_cents, as: :hidden, input_html: { value: @subtotal }  %>
         <%= f.simple_fields_for :line_items do |item| %>
           <%= item.input :product_id, as: :hidden, input_html: { value: @product.id} %>
           <%= item.input :unit_price_cents, as: :hidden, input_html: { value: @product.price_cents.to_i } %>
           <%= item.input :cantidad, input_html: { value: @cantidad } %>
         <% end %>
-        <%= f.submit "Guardar datos de orden" %>
+        <%= f.submit "Guardar",  class:"btn btn-primary m-1"  %>
       <% end %>
       </div>
+
+
+      <div class="detalle_orden col-6">
+            <h1>Detalle de Orden</h1>
+            
+             <div class="row align-items-center">
+                  <%= cl_image_tag @product.photo.key,  :size => "260px"%>
+             </div>
+           
+           <div>
+        
+            <h4>Producto: <span style="color:gray">  <%=   @product.name  %><span></h4>
+            <h4><%=  @product.content  %></h4>
+            <h4>Subtotal <span style="color:gray"> <%= @subtotal %> CLP <span></h4>
+            <h4>Total Compra  <span style="color:gray"><%= @subtotal %> CLP <span> </h4>
+           
+           </div>
+
+           
+
+      
+      </div>
+
+
     </div>
   </div>
 </div>

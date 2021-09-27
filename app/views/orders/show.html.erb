@@ -1,5 +1,5 @@
-<div class="container">
- <div class="d-flex justify-content-center">
+<div class="container mt-5">
+ <div class="d-flex justify-content-center mt-5">
     <h1>Resumen de Compra</h1>
  </div>
  <div class="d-flex justify-content-between aling-item-center border-bottom">
@@ -18,19 +18,19 @@
       <p>3. Confirmacion</p>
     </div>
   </div>
-    <div class="row aling-items-center">
+    <div class="row aling-items-center mt-5">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h5>TOTAL : <%= @order.total_price_cents %> CLP</h5>
-            <h5 class="card-title">Destinatario : <%= @order.destinatario %></h5>
-            <h5 class="card-title">Telefono : <%= @order.telefono %></h5>
-            <h5 class="card-title">Email : <%= @order.email_d %></h5>
-            <h5 class="card-title">Direccion de Envio : <%= @order.direccion_de_envio %></h5>
-            <h5 class="card-title">Comuna : <%= @order.comuna %></h5>
-            <h5 class="card-title">Ciudad : <%= @order.ciudad %></h5>
-            <h5 class="card-title">Codigo Postal : <%= @order.codigo_postal %></h5>
-            <%= link_to'Pagar', products_path, class:"btn btn-primary m-1"%>
+            <h5  class="card-title">Destinatario : <span style="color:gray">Total: <%= @order.total_price_cents %> CLP </span></h5>
+            <h5 class="card-title">Destinatario : <span style="color:gray"> <%= @order.destinatario %></span></h5>
+            <h5 class="card-title">Telefono : <span style="color:gray"> <%= @order.telefono %></span></h5>
+            <h5 class="card-title">Email : <span style="color:gray"> <%= @order.email_d %></span></h5>
+            <h5 class="card-title">Direccion de Envio : <span style="color:gray"> <%= @order.direccion_de_envio %></span></h5>
+            <h5 class="card-title">Comuna :  <span style="color:gray"> <%= @order.comuna %></span></h5>
+            <h5 class="card-title">Ciudad : <span style="color:gray"> <%= @order.ciudad %></span></h5>
+            <h5 class="card-title">Codigo Postal : <span style="color:gray"> <%= @order.codigo_postal %></span></h5>
+          
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
         <div class="card">
           <div class="card-body">
           <%= image_tag("webpay-plus-integracion.png", width: 300, crop: :fill) %>
-          <p class="card-text">Por favor espere y siga su orden.</p>
+          <br>
           <%= link_to'Pagar', check_order_path(@order), class:"btn btn-primary m-1"%>
           </div>
         </div>
