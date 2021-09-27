@@ -27,6 +27,10 @@ ActiveStorage.start()
 
 	setTimeout(function () {
 		$('.loader_bg').fadeToggle();
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 4c7884dbdfdcc8eecd8af5d364814787a4a3b692
 	}, 1500);
 
 
