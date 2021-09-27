@@ -1600,7 +1600,7 @@ input[type="radio"] .styled:checked+label::after {
 .btn-primary {
      background: #000;
      border: indianred;
-     max-width: 170px;
+     max-width: 119px;
      width: 100%;
      margin-right: 10px;
 }
