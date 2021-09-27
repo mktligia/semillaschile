@@ -27,7 +27,7 @@ ActiveStorage.start()
 
 	setTimeout(function () {
 		$('.loader_bg').fadeToggle();
-    alert("HEKO WORS");
+ 
 	}, 1500);
 
 
